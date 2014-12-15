@@ -19,14 +19,14 @@
 //
      // $results = $data->fetchAll( PDO::FETCH_ASSOC );
 
-	$subNav = "SELECT link, linkName, title FROM SERVICES ORDER BY id";
-	$data = $connection->query($subNav);
-	$outcome =$data->fetchAll(PDO::FETCH_ASSOC);
-
-
-	$sql= "SELECT page_Title, content  FROM pages";
-
-     $data = $connection->query($sql);
-
-     $results = $data->fetchAll( PDO::FETCH_ASSOC );
+	// $subNav = "SELECT link, linkName, title FROM SERVICES ORDER BY id";
+	// $data = $connection->query($subNav);
+	// $outcome =$data->fetchAll(PDO::FETCH_ASSOC);
+// 
+// 
+	// $sql= "SELECT page_Title, content  FROM pages";
+// 
+     // $data = $connection->query($sql);
+// 
+     // $results = $data->fetchAll( PDO::FETCH_ASSOC );
 ?>

@@ -1,4 +1,4 @@
 <?php 
 	
-	$content = "This is my portfolio page";
+	$content = "This is my rates page";
 ?>

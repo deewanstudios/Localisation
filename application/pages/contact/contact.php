@@ -1,81 +1,101 @@
-<title></title>
-
-<div class="padsection">
-    <div class="container_24">
-        <p><?php echo $content; ?></p>
-        
-	   <form action="" method="POST" enctype="multipart/form-data">
-    	
-            <span></span>
-            
-            
-            <div class="container_24">
-            
-                <label for="categories">Categories</label>
-            
-                <select name="categories">
-                    <option value="<?php if(isset($category)) {echo $category;} ?>">Please Select a Category  </option>
-                    <option value="Web Design"> Web Design </option>
-                    <option value="Search Engine Optimisation"> Search Engine Optimisation </option>
-                    <option value="Graphic Design"> Graphic Design </option>
-                    <option value="Business Card"> Business Card </option>
-                    <option value="Letter Heads"> Letter Heads </option>
-                    <option value="Complimentary Slips"> Complimentary Slips </option>
-                    <option value="Flyers"> Flyers </option>
-                    <option value="Posters"> Posters </option>
-                    <option value="Business Branding"> Business Branding </option>
-                    <option value="Web Hosting"> Web Hosting </option>
-                    <option value="General Enquiry"> General Enquiry </option>
-             </select>
-                <?php if (isset($err_category)){echo $err_category ;} ?>
-            </div>
-            
-            
-            <div class="container_24">
-            
-        <label for="fullName">Enter Your Name:</label>
-                <input type="text" name="name" title="Please enter your name" autofocus placeholder="Last, First"
-                 value="<?php if (isset($name)) {echo $name; } ?>"/>
-            	<?php if (isset($err_name)){echo $err_name ;} ?>   
-            </div>
-          
-            <div class="container_24">
-    
-                <label for="email">Enter Your Email address:</label>
-                <input name="email" type="email"  autofocus placeholder="me@mycompany.com"
-                title="Please enter your email address"
-                value="<?php if (isset($email)) {echo $email; } ?>" />
-                <?php if (isset($err_email)){echo $err_email;} ?>
-            </div>
-            
-            <div class="container_24">
-    
-                <label for="tel">Enter Your Contact Number: </label>
-                <input type="telephone" name="phoneNumber" autofocus placeholder="07958482326"
-                value="<?php if (isset ($phoneNumber)) {echo $phoneNumber;} ?>"  />
-                <?php if (isset($err_phoneNumber)){echo $err_phoneNumber;} ?>
-            </div>
-            
-            
-            <div class="container_24">
-                <label for="organisation">Enter Organisation or Company Name: </label>
-                <input type="text" name="organisation" autofocus placeholder="My Company Ltd"
-                value="<?php if (isset($organisation)) {echo $organisation; } ;?>" />
-                <?php if (isset($err_organisation)){echo $err_organisation ;} ?>
-            </div>
-            
-     		
-            
-            <div class="container_24">
-                <label for="enquiry">Please Enter Your Enquiry Below /label>
+<div id="middle">
+    <div class="middle-part-in">
+        <?php
+		echo $content;
+        ?>
+        <div class="wrapper-1">
+            <h1 class="h1-title">Contact Us</h1>
+            <div class="contact-left ">
+                <p>
+                    For a quote or more information, please call or email us.
+                    <br>
+                    Otherwise fill in the below form and we will get right back to you.
+                </p>
                 <div class="clear"></div>
-                <textarea name="enquiry"   rows="7"><?php if (isset($enquiry)) { echo $enquiry; } ?></textarea> 
-                <?php if (isset($err_enquiry)){echo $err_enquiry;} ?>
+                <form action="contactController.php" method="post" onsubmit="return chkform();">
+                    <input type="hidden" name="mode" value="contact" autocomplete="off">
+                    <div class="contact-form">
+                        <div style=" padding-bottom:5px; color:#0b0033" id="msg"></div>
+                        <p>
+                            Name <span>(Required)</span>
+                            <br>
+                            <input name="info[name]" id="name" type="text" class="contact-inp" autocomplete="off">
+                        </p>
+                        <p>
+                            Contact Number
+                            <br>
+                            <input name="info[contact]" type="text" id="contact" class="contact-inp" autocomplete="off">
+                        </p>
+                        <p>
+                            Email Address <span>(Required)</span>
+                            <br>
+                            <input name="info[email]" id="email" type="text" class="contact-inp" autocomplete="off">
+                        </p>
+                        <p>
+                            Message <span>(Required)</span>
+                            <br>
+                            <textarea name="info[message]" id="message" cols="45" rows="5" class="text-area"></textarea>
+                        </p>
+                        <p class="con-sub">
+                            <input type="submit" value="" class="sub-a" autocomplete="off">
+                        </p>
+                    </div>
+                </form>
+                <div class="clear"></div>
             </div>
-            
-            <div class="container_24">
-                <button type="submit" name="action" value="submit">Send</button>
-        	</div>
-        </form>
+            <div class="contact-right">
+                <div class="general-enq">
+                    <h4>General Enquiries</h4>
+                    <p class="general-fone">
+                        Tel: +44 (0) 20 8969 3435
+                    </p>
+                    <p class="general-email">
+                        <a href="mailto:hello@thesbdc.co.uk">hello@thesbdc.co.uk</a>
+                    </p>
+                </div>
+                <div class="followus">
+                    <h4>Follow Us</h4>
+                    <p class="fb">
+                        <a href="http://www.facebook.com/TheSmallBusinessDeliveryCompany" target="_blank">Facebook</a>
+                    </p>
+                    <p class="tw">
+                        <a href="https://twitter.com/The_SBDC" target="_blank">Twitter</a>
+                    </p>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
     </div>
+    <div class="clear"></div>
+
+
+ <!-- Dont forget to put this function in an independent javascript file -->
+    <script type="text/javascript">
+        function chkform() {// form validation
+            if (isEmpty("Name", document.getElementById("name").value)) {
+                document.getElementById("name").focus();
+                return false;
+            }
+            if (document.getElementById("contact").value != '') {
+                if (!hasOnlyNumeric("Contact Number", document.getElementById("contact").value)) {
+                    document.getElementById("contact").focus();
+                    return false;
+                }
+            }
+            if (isEmpty("E-mail Address", document.getElementById("email").value)) {
+                document.getElementById("email").focus();
+                return false;
+            }
+            if (!validateEmail('E-mail Address', document.getElementById('email').value)) {
+                document.getElementById('email').focus();
+                return false;
+            }
+            if (isEmpty("Message", document.getElementById("message").value)) {
+                document.getElementById("message").focus();
+                return false;
+            }
+        };
+    </script>
+
 </div>

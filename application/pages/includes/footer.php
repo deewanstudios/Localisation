@@ -26,9 +26,9 @@
         
         <div class="follow-us-link"> 
             
-        <a href="http://www.facebook.com/TheSmallBusinessDeliveryCompany" target="_blank" onclick="return fbs_click()"><img title="Like link" alt="sbdc link" src="images/like-1.jpg"></a> 
-        <a href="http://www.facebook.com/TheSmallBusinessDeliveryCompany" target="_blank"><img title="Slider Image1" alt="sbdc on facebook" src="images/fb-1.jpg"> </a>
-        <a href="https://twitter.com/The_SBDC" target="_blank"><img title="Twitter" alt="" src="images/tw-1.jpg"> </a>
+        <a href="http://www.facebook.com/TheSmallBusinessDeliveryCompany" target="_blank" onclick="return fbs_click()"><img title="Like link" alt="sbdc link" src="site/images/like-1.jpg"></a> 
+        <a href="http://www.facebook.com/TheSmallBusinessDeliveryCompany" target="_blank"><img title="Slider Image1" alt="sbdc on facebook" src="site/images/fb-1.jpg"> </a>
+        <a href="https://twitter.com/The_SBDC" target="_blank"><img title="Twitter" alt="" src="site/images/tw-1.jpg"> </a>
         <!--<a href="" target=""><img title="" alt="" src="images/you-tube-1.jpg"></a>-->
         </div>
         

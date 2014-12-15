@@ -12,10 +12,10 @@ include DATA . "nav.php";
     <meta name="description" content="Your description">
     <meta name="keywords" content="Your keywords">
     <meta name="author" content="Deewanstudios">
+    <link rel="stylesheet" href="site/css/structure.css" type="text/css" />
     <link rel="stylesheet" href="site/css/style.css" type="text/css" />
-    <link rel="stylesheet" href="site/css/style2.css" type="text/css" />
-    <link rel="stylesheet" href="site/css/style3.css" type="text/css" />
-    <link rel="stylesheet" href="site/css/style4.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="site/css/style2.css" type="text/css" /> -->
+    <!-- <link rel="stylesheet" href="site/css/style3.css" type="text/css" /> -->
     <script src="site/js/jquery-1.7.min.js" type="text/javascript"></script>
     <script src="site/js/script.js" type="text/javascript"></script>
 
@@ -51,7 +51,7 @@ include DATA . "nav.php";
     </div>
     <div class="clear"></div>
     <div class="social-media">
-<iframe frameborder="0" width="280" src="social-media.html" scrolling="no" height="250" class="frame" allowtransparency="1"></iframe>
+<!-- <iframe frameborder="0" width="280" src="social-media.html" scrolling="no" height="250" class="frame" allowtransparency="1"></iframe> -->
     </div>
     <div class="clear"></div>
     <div class="blue-part">
@@ -61,7 +61,7 @@ include DATA . "nav.php";
         <p class="contact-fone">Call us today on <span>020 8969 3435</span></p>
       </div>
       <div class="small-business">
-        <div class="small-img"><img src="images/small-business.png" alt="" title=""></div>
+        <div class="small-img"><img src="site/images/small-business.png" alt="" title=""></div>
         <div class="small-text"> ..and reliable and friendly and bespoke.
           Whether you are a small business, a charity or an every day Joe, we at the Small Business Delivery Company have an affordable delivery solution for you. </div>
       </div>

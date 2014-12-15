@@ -1,5 +1,5 @@
 <?php // home data page
-
+	$content = "This is my home page";
 	// $slider= "SELECT * FROM marqueeSlider";
 // 
 	 // $data = $connection->query($slider);
