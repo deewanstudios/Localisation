@@ -1,34 +1,34 @@
 <?php // home data page
 
-	$slider= "SELECT * FROM marqueeSlider";
+	// $slider= "SELECT * FROM marqueeSlider";
+// 
+	 // $data = $connection->query($slider);
+// 
+	 // $data->setFetchMode ( PDO::FETCH_ASSOC );
+// 
+	 // while ($row = $data->fetch() ){
+		 // $sliderImages[] = $row;
+		 // };
+// 
+     // $hover= "SELECT * FROM midSectionImages";
+// 
+     // $data = $connection->query($hover);
+// 
+     // $data->setFetchMode ( PDO::FETCH_ASSOC );
+// 
+     // while ($row = $data->fetch() ){
+         // $rolloverImages[] = $row;
+         // };
 
-	 $data = $connection->query($slider);
 
-	 $data->setFetchMode ( PDO::FETCH_ASSOC );
-
-	 while ($row = $data->fetch() ){
-		 $sliderImages[] = $row;
-		 };
-
-     $hover= "SELECT * FROM midSectionImages";
-
-     $data = $connection->query($hover);
-
-     $data->setFetchMode ( PDO::FETCH_ASSOC );
-
-     while ($row = $data->fetch() ){
-         $rolloverImages[] = $row;
-         };
-
-
-	$moreContent= "SELECT * FROM subContent";
-
-     $data = $connection->query($moreContent);
-
-     $data->setFetchMode ( PDO::FETCH_ASSOC );
-
-     while ($row = $data->fetch() ){
-         $subContent[] = $row;
-         };
+	// $moreContent= "SELECT * FROM subContent";
+// 
+     // $data = $connection->query($moreContent);
+// 
+     // $data->setFetchMode ( PDO::FETCH_ASSOC );
+// 
+     // while ($row = $data->fetch() ){
+         // $subContent[] = $row;
+         // };
 
 ?>
