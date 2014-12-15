@@ -16,8 +16,12 @@ include DATA . "nav.php";
     <link rel="stylesheet" href="site/css/style.css" type="text/css" />
     <!-- <link rel="stylesheet" href="site/css/style2.css" type="text/css" /> -->
     <!-- <link rel="stylesheet" href="site/css/style3.css" type="text/css" /> -->
-    <script src="site/js/jquery-1.7.min.js" type="text/javascript"></script>
+    <script src"http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
+    <script src="site/js/jquery-1.11.1.min.js" type="text/javascript"></script>
     <script src="site/js/script.js" type="text/javascript"></script>
+    <script src="site/js/example.js" type="text/javascript"></script>
+    <script src="site/js/slides.min.jquery.js" type="text/javascript"></script>
+    
 
 
 <!--[if lt IE 8]>
@@ -31,6 +35,51 @@ include DATA . "nav.php";
 	<script src="js/html5.js"></script>
 	<link rel="stylesheet" href="css/ie.css">
 <![endif]-->
+<script>
+		$(function(){
+			$('#slides').slides({
+				preload: true,
+				preloadImage: 'banner-1/img/loading.gif',
+				play: 5000,
+				pause: 2500,
+				hoverPause: true,
+				animationStart: function(current){
+					$('.caption').animate({
+						bottom:-35
+					},100);
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationStart on slide: ', current);
+					};
+				},
+				animationComplete: function(current){
+					$('.caption').animate({
+						bottom:0
+					},200);
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationComplete on slide: ', current);
+					};
+				},
+				slidesLoaded: function() {
+					$('.caption').animate({
+						bottom:0
+					},200);
+				}
+			});
+		});
+		
+</script>
+<script type="text/jscript"> 
+function change_text(show_text,textid){
+if(document.getElementById(textid).value==''){
+document.getElementById(textid).value = show_text;
+}
+};
+
+</script>
+<!--slides-->
+
 </head>
 <body>
 <div class="bg-main">
@@ -46,7 +95,7 @@ include DATA . "nav.php";
 						<img src="site/images/sep.jpg" />
 						<?php endforeach; ?>
 					</li>  
-        <!-- <li id="magic-line" class="lastItem" style="width: 129px; left: 244px;"></li></ul> -->
+        <li id="magic-line" class="lastItem" style="width: 129px; left: 244px;"></li></ul>
       </div>
     </div>
     <div class="clear"></div>

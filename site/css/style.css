@@ -1001,3 +1001,65 @@ input.sub-a:hover {
     display: inline;
 }
 
+/*Slides Styles begin here*/
+
+#slides {
+    position:absolute;
+    z-index:100;
+}
+
+.slides_container {
+    width:793px;
+    overflow:hidden;
+    position:relative;
+    display:none;
+}
+
+
+.slides_container div.slide {
+    width:793px;
+    height:527px;
+    display:block; float:left;
+}
+
+.slides_container div.slide img{
+-webkit-border-radius: 20px 20px 0px 0px;-moz-border-radius: 20px 20px 0px 0px;border-radius: 20px 20px 0px 0px;
+
+}
+
+
+#slides .next, #slides .prev {
+    position:absolute;
+    top:107px;
+    left:-39px;
+    width:24px;
+    height:43px;
+    display:block;
+    z-index:101;
+}
+#slides .next {
+    left:585px;
+}
+
+
+.pagination { margin:16px 0 0 0; padding:0; float:right;}
+.pagination li {
+    float:left;
+    margin:0 0 0 5px;
+    list-style:none;
+}
+.pagination li a {
+    display:block;
+    width:18px;
+    height:0;
+    padding-top:18px;
+    background-image:url(../images/pagination.png);
+    background-position:0 0;
+    float:left;
+    overflow:hidden;
+}
+.pagination li.current a {
+    background-position:0 -18px;
+}
+
+
