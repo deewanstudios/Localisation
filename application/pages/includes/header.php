@@ -70,6 +70,7 @@ include DATA . "nav.php";
 		});
 		
 </script>
+
 <script type="text/jscript"> 
 function change_text(show_text,textid){
 if(document.getElementById(textid).value==''){
