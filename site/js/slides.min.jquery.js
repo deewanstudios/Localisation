@@ -1,4 +1,3 @@
-/*global $ */
 /*
  * Slides, A Slideshow Plugin for jQuery
  * Intructions: http://slidesjs.com
@@ -20,17 +19,11 @@
  */
 
 (function($) {
-    "use strict";
     $.fn.slides = function(g) {
-        
         g = $.extend({}, $.fn.slides.option, g);
         return this.each(function() {
             $('.' + g.container, $(this)).children().wrapAll('<div class="slides_control"/>');
-            var d = $(this), control = $('.slides_control', d), total = control.children().size(), 
-            width = control.children().outerWidth(), height = control.children().outerHeight(), 
-            start = g.start - 1, effect = g.effect.indexOf(',') < 0 ? g.effect : g.effect.replace(' ','').split(',')[0], 
-            paginationEffect = g.effect.indexOf(',') < 0 ? effect : g.effect.replace(' ','').split(',')[1], next = 0, prev = 0, number = 0, 
-            current = 0, loaded, active, clicked, position, direction, imageParent, pauseTimeout, playInterval;
+            var d = $(this), control = $('.slides_control', d), total = control.children().size(), width = control.children().outerWidth(), height = control.children().outerHeight(), start = g.start - 1, effect = g.effect.indexOf(',') < 0 ? g.effect : g.effect.replace(' ','').split(',')[0], paginationEffect = g.effect.indexOf(',') < 0 ? effect : g.effect.replace(' ','').split(',')[1], next = 0, prev = 0, number = 0, current = 0, loaded, active, clicked, position, direction, imageParent, pauseTimeout, playInterval;
             function animate(a, b, c) {
                 if (!active && loaded) {
                     active = true;
@@ -57,14 +50,14 @@
                             prev = $('.' + g.paginationClass + ' li.current a', d).attr('href').match('[^#/]+$');
                             if (next > prev) {
                                 position = width * 2;
-                                a = -width * 2;
+                                a = -width * 2
                             }
                             else {
                                 position = 0;
-                                a = 0;
+                                a = 0
                             }
                             current = next;
-                            break;
+                            break
                     }
                     if (b === 'fade') {
                         if (g.crossfade) {
@@ -83,8 +76,8 @@
                                             zIndex : 0
                                         });
                                         g.animationComplete(next + 1);
-                                        active = false;
-                                    });
+                                        active = false
+                                    })
 
                                 }
                                 else {
@@ -96,9 +89,9 @@
                                         zIndex : 0
                                     });
                                     g.animationComplete(next + 1);
-                                    active = false;
+                                    active = false
                                 }
-                            });
+                            })
 
                         }
                         else {
@@ -107,21 +100,21 @@
                                     control.animate({
                                         height : control.children(':eq(' + next + ')', d).outerHeight()
                                     }, g.autoHeightSpeed, function() {
-                                        control.children(':eq(' + next + ')', d).fadeIn(g.fadeSpeed, g.fadeEasing);
-                                    });
+                                        control.children(':eq(' + next + ')', d).fadeIn(g.fadeSpeed, g.fadeEasing)
+                                    })
 
                                 }
                                 else {
                                     control.children(':eq(' + next + ')', d).fadeIn(g.fadeSpeed, g.fadeEasing, function() {
                                         if ($.browser.msie) {
-                                            $(this).get(0).style.removeAttribute('filter');
+                                            $(this).get(0).style.removeAttribute('filter')
                                         }
-                                    });
+                                    })
 
                                 }
                                 g.animationComplete(next + 1);
-                                active = false;
-                            });
+                                active = false
+                            })
 
                         }
                     }
@@ -148,8 +141,8 @@
                                     zIndex : 0
                                 });
                                 g.animationComplete(next + 1);
-                                active = false;
-                            });
+                                active = false
+                            })
 
                         }
                         else {
@@ -169,20 +162,20 @@
                                     zIndex : 0
                                 });
                                 g.animationComplete(next + 1);
-                                active = false;
-                            });
+                                active = false
+                            })
 
                         }
                     }
                     if (g.pagination) {
                         $('.' + g.paginationClass + ' li.current', d).removeClass('current');
-                        $('.' + g.paginationClass + ' li:eq(' + next + ')', d).addClass('current');
+                        $('.' + g.paginationClass + ' li:eq(' + next + ')', d).addClass('current')
                     }
                 }
             }
 
             function stop() {
-                clearInterval(d.data('interval'));
+                clearInterval(d.data('interval'))
             }
 
             function pause() {
@@ -192,31 +185,31 @@
                     pauseTimeout = setTimeout(function() {
                         clearTimeout(d.data('pause'));
                         playInterval = setInterval(function() {
-                            animate("next", effect);
+                            animate("next", effect)
                         }, g.play);
-                        d.data('interval', playInterval);
+                        d.data('interval', playInterval)
                     }, g.pause);
-                    d.data('pause', pauseTimeout);
+                    d.data('pause', pauseTimeout)
                 }
                 else {
-                    stop();
+                    stop()
                 }
             }
 
             if (total < 2) {
-                return;
+                return
             }
             if (start < 0) {
-                start = 0;
+                start = 0
             }
             if (start > total) {
-                start = total - 1;
+                start = total - 1
             }
             if (g.start) {
-                current = start;
+                current = start
             }
             if (g.randomize) {
-                control.randomize();
+                control.randomize()
             }
             $('.' + g.container, d).css({
                 overflow : 'hidden',
@@ -244,18 +237,18 @@
                 });
                 control.animate({
                     height : control.children(':eq(' + start + ')').outerHeight()
-                }, g.autoHeightSpeed);
+                }, g.autoHeightSpeed)
             }
             if (g.preload && control.find('img').length) {
                 $('.' + g.container, d).css({
                     background : 'url(' + g.preloadImage + ') no-repeat 50% 50%'
                 });
                 var f = control.find('img:eq(' + start + ')').attr('src') + '?' + (new Date()).getTime();
-                if ($('img', d).parent().attr('class') !== 'slides_control') {
-                    imageParent = control.children(':eq(0)')[0].tagName.toLowerCase();
+                if ($('img', d).parent().attr('class') != 'slides_control') {
+                    imageParent = control.children(':eq(0)')[0].tagName.toLowerCase()
                 }
                 else {
-                    imageParent = control.find('img:eq(' + start + ')');
+                    imageParent = control.find('img:eq(' + start + ')')
                 }
                 control.find('img:eq(' + start + ')').attr('src', f).load(function() {
                     control.find(imageParent + ':eq(' + start + ')').fadeIn(g.fadeSpeed, g.fadeEasing, function() {
@@ -266,17 +259,17 @@
                             background : ''
                         });
                         loaded = true;
-                        g.slidesLoaded();
-                    });
+                        g.slidesLoaded()
+                    })
 
-                });
+                })
 
             }
             else {
                 control.children(':eq(' + start + ')').fadeIn(g.fadeSpeed, g.fadeEasing, function() {
                     loaded = true;
-                    g.slidesLoaded();
-                });
+                    g.slidesLoaded()
+                })
 
             }
             if (g.bigTarget) {
@@ -285,80 +278,80 @@
                 });
                 control.children().click(function() {
                     animate('next', effect);
-                    return false;
-                });
+                    return false
+                })
 
             }
             if (g.hoverPause && g.play) {
                 control.bind('mouseover', function() {
-                    stop();
+                    stop()
                 });
                 control.bind('mouseleave', function() {
-                    pause();
-                });
+                    pause()
+                })
 
             }
             if (g.generateNextPrev) {
                 $('.' + g.container, d).after('<a href="#" class="' + g.prev + '">Prev</a>');
-                $('.' + g.prev, d).after('<a href="#" class="' + g.next + '">Next</a>');
+                $('.' + g.prev, d).after('<a href="#" class="' + g.next + '">Next</a>')
             }
             $('.' + g.next, d).click(function(e) {
                 e.preventDefault();
                 if (g.play) {
-                    pause();
+                    pause()
                 }
-                animate('next', effect);
+                animate('next', effect)
             });
             $('.' + g.prev, d).click(function(e) {
                 e.preventDefault();
                 if (g.play) {
-                    pause();
+                    pause()
                 }
-                animate('prev', effect);
+                animate('prev', effect)
             });
             if (g.generatePagination) {
                 d.append('<ul class=' + g.paginationClass + '></ul>');
                 control.children().each(function() {
                     $('.' + g.paginationClass, d).append('<li><a href="#' + number + '">' + (number + 1) + '</a></li>');
-                    //number++
-                });
+                    number++
+                })
 
             }
             else {
                 $('.' + g.paginationClass + ' li a', d).each(function() {
                     $(this).attr('href', '#' + number);
-                    //number++
-                });
+                    number++
+                })
 
             }
             $('.' + g.paginationClass + ' li:eq(' + start + ')', d).addClass('current');
             $('.' + g.paginationClass + ' li a', d).click(function() {
                 if (g.play) {
-                    pause();
+                    pause()
                 }
                 clicked = $(this).attr('href').match('[^#/]+$');
-                if (current !== clicked) {
-                    animate('pagination', paginationEffect, clicked);
+                if (current != clicked) {
+                    animate('pagination', paginationEffect, clicked)
                 }
-                return false;
+                return false
             });
             $('a.link', d).click(function() {
                 if (g.play) {
-                    pause();
+                    pause()
                 }
                 clicked = $(this).attr('href').match('[^#/]+$') - 1;
-                if (current !== clicked) {
-                    animate('pagination', paginationEffect, clicked);
+                if (current != clicked) {
+                    animate('pagination', paginationEffect, clicked)
                 }
-                return false;
+                return false
             });
             if (g.play) {
                 playInterval = setInterval(function() {
-                    animate('next', effect);
+                    animate('next', effect)
                 }, g.play);
-                d.data('interval', playInterval);
+                d.data('interval', playInterval)
             }
-        });
+        })
 
     };
     $.fn.slides.option = {
@@ -395,18 +388,17 @@
     };
     $.fn.randomize = function(c) {
         function randomizeOrder() {
-            return (Math.round(Math.random()) - 0.5);
+            return (Math.round(Math.random()) - 0.5)
         }
         return ($(this).each(function() {
-                var $this = $(this),
-                 $children = $this.children(),
-                 a = $children.length;
+                var $this = $(this);
+                var $children = $this.children();
+                var a = $children.length;
                 if (a > 1) {
                     $children.hide();
                     var b = [];
-                    var i;
                     for ( i = 0; i < a; i++) {
-                        b[b.length] = i;
+                        b[b.length] = i
                     }
                     b = b.sort(randomizeOrder);
                     $.each(b, function(j, k) {
@@ -424,5 +416,4 @@
 
     }
 
-})
-(jQuery);
+})(jQuery);
