@@ -16,7 +16,7 @@
                         We love working with interesting people and great businesses, and we always give great prices to charities and community organisations.
                     </p>
                 </div>
-                <div class="right"><img src="site/images/banner_images/1360245831_banner-img.jpg" alt="" title="">
+                <div class="right"><img src="site/images/1360245831_banner-img.jpg" alt="" title="">
                 </div>
             </div>
             <div class="clear"></div>
@@ -76,16 +76,16 @@
                         <div class="slides_container" style="overflow: hidden; position: relative; display: block;">
                             <div class="slides_control" style="position: relative; width: 2379px; height: 527px; left: -793px;">
                                 <div class="slide" style="position: absolute; top: 0px; left: 793px; z-index: 5; display: block;">
-                                    <a href="#" title="" target="_blank"><img src="site/images/banner_images/1360677399_banner-1.jpg" alt="Slide 1"></a>
+                                    <a href="#" title="" target="_blank"><img src="site/images/1360677399_banner-1.jpg" alt="Slide 1"></a>
                                 </div>
                                 <div class="slide" style="position: absolute; top: 0px; left: 793px; z-index: 0; display: none;">
-                                    <a href="#" title="" target="_blank"><img src="site/images/banner_images/1360677380_banner-2.jpg" alt="Slide 1"></a>
+                                    <a href="#" title="" target="_blank"><img src="site/images/1360677380_banner-2.jpg" alt="Slide 1"></a>
                                 </div>
                                 <div class="slide" style="position: absolute; top: 0px; left: 793px; z-index: 0; display: none;">
-                                    <a href="#" title="" target="_blank"><img src="site/images/banner_images/1360677357_banner-3.jpg" alt="Slide 1"></a>
+                                    <a href="#" title="" target="_blank"><img src="site/images/1360677357_banner-3.jpg" alt="Slide 1"></a>
                                 </div>
                                 <div class="slide" style="position: absolute; top: 0px; left: 793px; z-index: 0; display: none;">
-                                    <a href="#" title="" target="_blank"><img src="site/images/banner_images/1360677283_banner-4.jpg" alt="Slide 1"></a>
+                                    <a href="#" title="" target="_blank"><img src="site/images/1360677283_banner-4.jpg" alt="Slide 1"></a>
                                 </div>
                             </div>
 

@@ -5,7 +5,7 @@
     <div class="middle-part-in">
     	  
     <div class="wrapper-1">
-    	<?php echo $content; ?>
+    	<!-- <?php echo $content; ?> -->
       <h1 class="h1-title">Our Rates</h1>
       <div class="rates">
         <div class="man-van">
