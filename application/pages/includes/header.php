@@ -14,13 +14,20 @@ include DATA . "nav.php";
     <meta name="author" content="Deewanstudios">
     <link rel="stylesheet" href="site/css/structure.css" type="text/css" />
     <link rel="stylesheet" href="site/css/style.css" type="text/css" />
-    <script src"http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="site/css/tab.css" type="text/css" />
+    
+    <script src="site/js/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+     
     <script src="site/js/jquery.color-RGBa-patch.js" type="text/javascript"></script>
+   
     <script src="site/js/script.js" type="text/javascript"></script>
     <script src="site/js/example.js" type="text/javascript"></script>
-    <script src="site/js/jquery.min.js" type="text/javascript"></script>
-    <script src="site/js/slides.min.jquery.js" type="text/javascript"></script>
-    <script src="site/js/right-tab-scripts.min.jquery.js" type="text/javascript"></script>
+    
+    <script src="site/js/slides.min.jquery.js" type="text/javascript"></script>   
+
+<script type="text/javascript" src="http://www.google.com/jsapi"></script> 
+<script type="text/javascript" src="site/js/service-script.js"></script>
     
 
 
@@ -51,13 +58,13 @@ include DATA . "nav.php";
 					<li><a href="?page=<?php echo $link["menu_name"]; ?>"><?php echo $link["menu_name"]; ?></a>
 						<img src="site/images/sep.jpg" />
 						<?php endforeach; ?>
-					</li>  
-        <li id="magic-line" class="lastItem" style="width: 129px; left: 244px;"></li></ul>
+					</li>
+        
       </div>
     </div>
     <div class="clear"></div>
     <div class="social-media">
-<!-- <iframe frameborder="0" width="280" src="social-media.html" scrolling="no" height="250" class="frame" allowtransparency="1"></iframe> -->
+<iframe frameborder="0" width="280" src="social-medial.html" scrolling="no" height="250" class="frame" allowtransparency="1"></iframe>
     </div>
     <div class="clear"></div>
     <div class="blue-part">

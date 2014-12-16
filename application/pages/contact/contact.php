@@ -1,9 +1,10 @@
 <div id="middle">
     <div class="middle-part-in">
-        <?php
-		echo $content;
-        ?>
+       
         <div class="wrapper-1">
+        	 <!-- <?php
+		echo $content;
+        ?> -->
             <h1 class="h1-title">Contact Us</h1>
             <div class="contact-left ">
                 <p>
