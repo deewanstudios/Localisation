@@ -1,5 +1,4 @@
 <div id="middle">
-
     <div class="middle-part">
         <?php
 		echo $content;
@@ -182,7 +181,7 @@
                                     </ul>
                                 </div>
                                 <div id="featured" style="display: none;">
-                                    <!-- <iframe src="twitter.php" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:290px; height:588px;" allowTransparency="true"></iframe>-->
+                                    <iframe src="twitter.php" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:290px; height:588px;" allowTransparency="true"></iframe>
                                     <div style="text-align:center" data-twttr-id="twttr-sandbox-0">
                                         <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-timeline twitter-timeline-rendered" allowfullscreen="" title="Twitter Timeline" height="590" style="border: none; max-width: 100%; min-width: 180px; width: 290px;"></iframe>
 
@@ -232,43 +231,51 @@
                 </div>
             </div>
             <div class="clear"></div>
-
-            <!-- Dont forget to remove this code -->
-            <script type="text/javascript">
-                function chkform() {// form validation
-                    if ((document.getElementById("name").value == 'Enter Name') || (document.getElementById("name").value == '')) {
-                        alert('Please Enter Name');
-                        document.getElementById("name").value == '';
-                        document.getElementById("name").focus();
-                        return false;
-                    }
-                    if ((document.getElementById("contact").value == 'Enter Contact Number') || (document.getElementById("contact").value == '')) {
-                        alert('Please Enter Contact Number');
-                        document.getElementById("contact").value == '';
-                        document.getElementById("contact").focus();
-                        return false;
-                    }
-                    if (!hasOnlyNumericH("Contact Number", document.getElementById("contact").value)) {
-                        document.getElementById("contact").focus();
-                        return false;
-                    }
-                    if ((document.getElementById("email").value == 'Enter Email Address') || (document.getElementById("email").value == '')) {
-                        alert('Please Enter Email Address');
-                        document.getElementById("email").value == '';
-                        document.getElementById("email").focus();
-                        return false;
-                    }
-                    if (!validateEmailT('E-mail Address', document.getElementById('email').value)) {
-                        document.getElementById('email').focus();
-                        return false;
-                    }
-                    if ((document.getElementById("security_code").value == 'Security Code') || (document.getElementById("security_code").value == '')) {
-                        alert('Please Enter Security Code');
-                        document.getElementById("security_code").value == '';
-                        document.getElementById("security_code").focus();
-                        return false;
-                    }
-                };
-            </script>
-
         </div>
+        
+        <script>
+		$(function(){
+			$('#slides').slides({
+				 preload: true,
+				preloadImage: 'banner-1/img/loading.gif',
+				play: 5000,
+				console.log('I am playing');
+				pause: 2500,
+				hoverPause: true,
+				animationStart: function(current){
+					$('.caption').animate({
+						bottom:-35
+					},100);
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationStart on slide: ', current);
+					};
+				},
+				animationComplete: function(current){
+					$('.caption').animate({
+						bottom:0
+					},200);
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationComplete on slide: ', current);
+					};
+				},
+				slidesLoaded: function() {
+					$('.caption').animate({
+						bottom:0
+					},200);
+				}
+			});
+		});
+		
+</script>
+
+<script type="text/jscript"> 
+function change_text(show_text,textid){
+if(document.getElementById(textid).value==''){
+document.getElementById(textid).value = show_text;
+}
+};
+
+</script>
+<!--slides-->
