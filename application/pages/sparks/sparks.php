@@ -1,4 +1,3 @@
-
 <div id="middle">
 	
     <div class="middle-part-in">
